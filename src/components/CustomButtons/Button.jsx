@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react'
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from 'classnames'
 
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Button from "@material-ui/core/Button";
+import withStyles from '@material-ui/core/styles/withStyles'
+import Button from '@material-ui/core/Button'
 
 // core components
 
-import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle.jsx";
+import buttonStyle from 'assets/jss/material-kit-react/components/buttonStyle.jsx'
 
-function RegularButton({ ...props }) {
+function RegularButton ({ ...props }) {
   const {
     classes,
     color,
@@ -27,7 +27,7 @@ function RegularButton({ ...props }) {
     justIcon,
     className,
     ...rest
-  } = props;
+  } = props
   const btnClasses = classNames({
     [classes.button]: true,
     [classes[size]]: size,
@@ -40,31 +40,31 @@ function RegularButton({ ...props }) {
     [classes.link]: link,
     [classes.justIcon]: justIcon,
     [className]: className
-  });
+  })
   return (
     <Button {...rest} className={btnClasses}>
       {children}
     </Button>
-  );
+  )
 }
 
 RegularButton.propTypes = {
   classes: PropTypes.object.isRequired,
   color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose",
-    "white",
-    "facebook",
-    "twitter",
-    "google",
-    "github",
-    "transparent"
+    'primary',
+    'info',
+    'success',
+    'warning',
+    'danger',
+    'rose',
+    'white',
+    'facebook',
+    'twitter',
+    'google',
+    'github',
+    'transparent'
   ]),
-  size: PropTypes.oneOf(["sm", "lg"]),
+  size: PropTypes.oneOf(['sm', 'lg']),
   simple: PropTypes.bool,
   round: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -72,6 +72,6 @@ RegularButton.propTypes = {
   block: PropTypes.bool,
   link: PropTypes.bool,
   justIcon: PropTypes.bool
-};
+}
 
-export default withStyles(buttonStyle)(RegularButton);
+export default withStyles(buttonStyle)(RegularButton)
