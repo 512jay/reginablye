@@ -6,9 +6,12 @@
   background-size: cover;
 }*/
 
-body {
+body.beige {
     height: 100%;
     background-color: #f2efe8;
+}
+.beige {
+    /*background-color: #f2efe8;*/
 }
 
 .frontpage {
@@ -50,6 +53,10 @@ p {
   margin-top: 2em;
 }
 
+.bottomSpace{
+  margin-bottom: 2em;
+}
+
 .justice{
   font-family: "futura-pt";
     font-size: 29px;
@@ -65,3 +72,25 @@ p {
     -webkit-margin-end: 40px;
 }
 
+.albumWrapper{
+  display: flex;
+  justify-content: space-around;
+  padding:10em;
+
+}
+
+.videoWrapper{
+  padding:5em;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+#vid{
+  flex-direction: column;
+
+}
+
+.vidText{
+  max-width: 640px;
+}
