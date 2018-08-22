@@ -112,4 +112,8 @@ p {
     max-width: 640px;
 }
 
-.tnav .navbar .container { height: 28px; }
+.video{
+    height: 100%;
+}
+
+/*.tnav .navbar .container { height: 28px; }*/
