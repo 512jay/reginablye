@@ -89,14 +89,19 @@ p {
 
 .albumWrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    padding: 10em;
+    align-items: center;
+
+    /*padding: 5em;*/
 }
 
 .videoWrapper {
     padding: 5em;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+
 }
 
 #vid {
