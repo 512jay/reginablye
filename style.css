@@ -11,28 +11,33 @@ body.beige {
 .frontpage {
     background-image: url("./paras-removed.jpg");
     background-color: #0E61E3;
-    height: 100%;
+    /*height: 100%;*/
 
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    box-sizing: content-box;
     /*position: relative;*/
 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-
     background-size: cover;
     overflow: hidden;
+    
 }
 
-/*@media only screen and (max-width: 600px) {
+/*
+@media only screen and (max-width: 1024) {
     .frontpage {
+        background-color: #0E61E3;
         background-image: url("./paras-removed-400x500.jpg");
     }
-}*/
-
+}
+*/
+html {
+height: 100vh; /* set viewport constraint */
+min-height: 100%; /* enforce height */
+}
 
 img {
     display: block;
