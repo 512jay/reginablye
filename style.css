@@ -21,7 +21,9 @@ body.beige {
 }
 
 @media only screen and (max-width: 600px) {
-    .frontpage {background: red;}
+    .frontpage {
+        background-image: url("./paras-removed-400x500.jpg");
+    }
 }
 
 
