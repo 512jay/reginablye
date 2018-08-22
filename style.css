@@ -15,7 +15,8 @@ body.beige {
 
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: scroll;
+    background-attachment: fixed;
+    box-sizing: content-box;
     /*position: relative;*/
 
     -webkit-background-size: cover;
