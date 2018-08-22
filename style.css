@@ -14,7 +14,7 @@ body.beige {
 
 .frontpage {
     height: 100%;
-    /*background-color: #0E61E3;*/
+    background-color: #0E61E3;
     background-image: url("./paras-removed.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -30,6 +30,7 @@ body.beige {
 
 @media only screen and (max-width: 600px) {
     .frontpage {
+            background-color: #0E61E3;
         background-image: url("https://512jay.github.io/reginablye/paras-removed-400x500.jpg");
     }
 }
