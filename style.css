@@ -1,3 +1,7 @@
+body, html{
+    height: 100;
+}
+
 body.beige {
     height: 100%;
     background-color: #f2efe8;
@@ -5,19 +9,20 @@ body.beige {
 
 
 .frontpage {
-    height: 100%;
-    background-color: #0E61E3;
     background-image: url("./paras-removed.jpg");
+    background-color: #0E61E3;
+    height: 100%;
+
     background-repeat: no-repeat;
-    background-position: center;
+    /*background-position: center;*/
     background-attachment: fixed;
-    position: relative;
+    /*position: relative;*/
 
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 
-    background-size: 100% 100%;
+    background-size: cover;
     overflow: hidden;
 }
 
