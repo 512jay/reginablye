@@ -29,8 +29,8 @@ body.beige {
 }
 
 @media only screen and (max-width: 600px) {
-    .fontpage {
-        background-image: url("./paras-removed-400x500.jpg");
+    .frontpage {
+        background-image: url("https://512jay.github.io/reginablye/paras-removed-400x500.jpg");
     }
 }
 
