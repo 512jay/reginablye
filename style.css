@@ -28,6 +28,12 @@ body.beige {
     overflow: hidden;
 }
 
+@media only screen and (max-width: 600px) {
+    .fontpage {
+        background-image: url("./paras-removed-400x500.jpg");
+    }
+}
+
 img {
     display: block;
     margin-left: auto;
