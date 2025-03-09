@@ -182,17 +182,25 @@ h6 {
 }
 
 .header .social-links {
-  margin: 0 0 20px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  /* If you want them in a row */
+  /* flex-direction: column;
+  /* If you want them in a column */
+  align-items: center;
+  gap: 10px;
+  /* Adjusts spacing between icons */
 }
 
 .header .social-links a {
-  font-size: 16px;
-  display: inline-flex;
+  font-size: 18px;
+  display: flex;
   align-items: center;
   justify-content: center;
   background: color-mix(in srgb, var(--default-color), transparent 90%);
   color: var(--default-color);
-  margin: 0 2px;
+  margin: 5px 0;
   border-radius: 50%;
   text-align: center;
   width: 40px;
@@ -688,6 +696,54 @@ section,
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/*--------------------------------------------------------------
+# Back In The Day Section
+--------------------------------------------------------------*/
+.back-in-the-day {
+  background: #ffffff;
+  /* Keep a clean background */
+  padding: 60px 0;
+}
+
+.back-in-the-day .content {
+  padding-left: 20px;
+}
+
+.back-in-the-day h3,
+.back-in-the-day h4 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.back-in-the-day ul {
+  padding: 0;
+  list-style: none;
+}
+
+.back-in-the-day ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.back-in-the-day ul li i {
+  color: #007bff;
+  margin-right: 8px;
+}
+
+.back-in-the-day img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-in-the-day .quote {
+  font-style: italic;
+  color: #555;
+  margin-top: 20px;
+  padding-left: 15px;
+  border-left: 4px solid #007bff;
+}
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
