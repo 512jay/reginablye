@@ -338,20 +338,24 @@
                     <p class="text-center text-muted">Have a question? Send me a message!</p>
                     
 <?php session_start(); ?>
-
-<?php if (isset($_SESSION["success"])): ?>
-<div class="alert alert-success text-center" role="alert" style="display: block;">
-  <?php echo $_SESSION["success"]; ?>
+<div id="successMessage" class="alert alert-success text-center" role="alert" style="display: none;">
+  <?php if (isset($_SESSION["success"])) { echo $_SESSION["success"]; unset($_SESSION["success"]); } ?>
 </div>
-<?php unset($_SESSION["success"]); ?>
-<?php endif; ?>
 
-<?php if (isset($_SESSION["error"])): ?>
-<div class="alert alert-danger text-center" role="alert" style="display: block;">
-  <?php echo $_SESSION["error"]; ?>
+<div id="errorMessage" class="alert alert-danger text-center" role="alert" style="display: none;">
+  <?php if (isset($_SESSION["error"])) { echo $_SESSION["error"]; unset($_SESSION["error"]); } ?>
 </div>
-<?php unset($_SESSION["error"]); ?>
-<?php endif; ?>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (document.getElementById("successMessage").textContent.trim() !== "") {
+      document.getElementById("successMessage").style.display = "block";
+    }
+    if (document.getElementById("errorMessage").textContent.trim() !== "") {
+      document.getElementById("errorMessage").style.display = "block";
+    }
+  });
+</script>
 
             
                     <form id="contactForm" action="contact.php" method="post">
