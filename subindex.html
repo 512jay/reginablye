@@ -337,20 +337,21 @@
                     <h2 class="contact-header">Get in Touch</h2>
                     <p class="text-center text-muted">Have a question? Send me a message!</p>
                     
-                    <?php session_start(); ?>
-                    <?php if (isset($_SESSION["success"])): ?>
-                      <div class="alert alert-success text-center" role="alert">
-                        <?php echo $_SESSION["success"]; ?>
-                      </div>
-                      <?php unset($_SESSION["success"]); ?>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($_SESSION["error"])): ?>
-                      <div class="alert alert-danger text-center" role="alert">
-                        <?php echo $_SESSION["error"]; ?>
-                      </div>
-                      <?php unset($_SESSION["error"]); ?>
-                    <?php endif; ?>
+<?php session_start(); ?>
+
+<?php if (isset($_SESSION["success"])): ?>
+<div class="alert alert-success text-center" role="alert" style="display: block;">
+  <?php echo $_SESSION["success"]; ?>
+</div>
+<?php unset($_SESSION["success"]); ?>
+<?php endif; ?>
+
+<?php if (isset($_SESSION["error"])): ?>
+<div class="alert alert-danger text-center" role="alert" style="display: block;">
+  <?php echo $_SESSION["error"]; ?>
+</div>
+<?php unset($_SESSION["error"]); ?>
+<?php endif; ?>
 
             
                     <form id="contactForm" action="contact.php" method="post">
