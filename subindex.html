@@ -335,29 +335,15 @@
             <div class="container">
                 <div class="contact-container">
                     <h2 class="contact-header">Get in Touch</h2>
-                    <p class="text-center text-muted">Have a question? Send me a message!</p>
-                    
-<?php session_start(); ?>
-<div id="successMessage" class="alert alert-success text-center" role="alert" style="display: none;">
-  <?php if (isset($_SESSION["success"])) { echo $_SESSION["success"]; unset($_SESSION["success"]); } ?>
-</div>
+                    <p class="text-center text-muted">Have a question? Send me a message!</p>                    
+        <?php session_start(); ?>
+        <div id="successMessage" class="alert alert-success text-center" role="alert" style="display: none;">
+          <?php if (isset($_SESSION["success"])) { echo $_SESSION["success"]; unset($_SESSION["success"]); } ?>
+        </div>
 
-<div id="errorMessage" class="alert alert-danger text-center" role="alert" style="display: none;">
-  <?php if (isset($_SESSION["error"])) { echo $_SESSION["error"]; unset($_SESSION["error"]); } ?>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    if (document.getElementById("successMessage").textContent.trim() !== "") {
-      document.getElementById("successMessage").style.display = "block";
-    }
-    if (document.getElementById("errorMessage").textContent.trim() !== "") {
-      document.getElementById("errorMessage").style.display = "block";
-    }
-  });
-</script>
-
-            
+        <div id="errorMessage" class="alert alert-danger text-center" role="alert" style="display: none;">
+          <?php if (isset($_SESSION["error"])) { echo $_SESSION["error"]; unset($_SESSION["error"]); } ?>
+        </div>
                     <form id="contactForm" action="contact.php" method="post">
                         <div class="mb-3">
                             <label for="name" class="form-label">Your Name</label>
@@ -375,7 +361,7 @@
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-custom w-100">Send Message</button>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -429,6 +415,26 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let successMessage = document.getElementById("successMessage");
+      let errorMessage = document.getElementById("errorMessage");
+
+      if (successMessage.textContent.trim() !== "") {
+        successMessage.style.display = "block";
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 4000); // Hide success message after 4 seconds
+      }
+
+      if (errorMessage.textContent.trim() !== "") {
+        errorMessage.style.display = "block";
+        setTimeout(() => {
+          errorMessage.style.display = "none";
+        }, 4000); // Hide error message after 4 seconds
+      }
+    });
+  </script>
 
 </body>
 
