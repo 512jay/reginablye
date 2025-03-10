@@ -1,5 +1,6 @@
 <?php
-session_start(); // Start the session to store messages
+header("Content-Type: application/json"); // Ensure response is JSON
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST["name"]);
@@ -7,34 +8,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = htmlspecialchars($_POST["subject"]);
     $message = htmlspecialchars($_POST["message"]);
 
-    // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION["error"] = "Invalid email format.";
-        header("Location: subindex.html");
+        echo json_encode(["status" => "error", "message" => "Invalid email format."]);
         exit;
     }
 
-    // Change this to your actual email
-    $to = "rb@reginablye.com";  
+    $to = "rb@reginablye.com";
     $headers = "From: " . $email . "\r\n";
     $headers .= "Reply-To: " . $email . "\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     $email_message = "Name: $name\nEmail: $email\nSubject: $subject\nMessage:\n$message\n";
 
-    // Send email
     if (mail($to, $subject, $email_message, $headers)) {
-        $_SESSION["success"] = "Your message was sent successfully!";
+        echo json_encode(["status" => "success", "message" => "Message sent successfully!"]);
     } else {
-        $_SESSION["error"] = "Failed to send your message. Please try again later.";
+        echo json_encode(["status" => "error", "message" => "Error sending email."]);
     }
-
-    // Redirect back to the form page
-    header("Location: subindex.html");
-    exit;
 } else {
-    $_SESSION["error"] = "Invalid request.";
-    header("Location: subindex.html");
-    exit;
+    echo json_encode(["status" => "error", "message" => "Invalid request."]);
 }
 ?>
