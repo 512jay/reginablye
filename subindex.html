@@ -336,14 +336,7 @@
                 <div class="contact-container">
                     <h2 class="contact-header">Get in Touch</h2>
                     <p class="text-center text-muted">Have a question? Send me a message!</p>                    
-        <?php session_start(); ?>
-        <div id="successMessage" class="alert alert-success text-center" role="alert" style="display: none;">
-          <?php if (isset($_SESSION["success"])) { echo $_SESSION["success"]; unset($_SESSION["success"]); } ?>
-        </div>
 
-        <div id="errorMessage" class="alert alert-danger text-center" role="alert" style="display: none;">
-          <?php if (isset($_SESSION["error"])) { echo $_SESSION["error"]; unset($_SESSION["error"]); } ?>
-        </div>
                     <form id="contactForm">
                       <div class="mb-3">
                         <label for="name" class="form-label">Your Name</label>
@@ -368,7 +361,14 @@
                     <!-- Message Alerts -->
                     <div id="successMessage" class="alert alert-success text-center" role="alert" style="display: none;"></div>
                     <div id="errorMessage" class="alert alert-danger text-center" role="alert" style="display: none;"></div>
-
+                    <?php session_start(); ?>
+                    <div id="successMessage" class="alert alert-success text-center" role="alert" style="display: none;">
+                      <?php if (isset($_SESSION["success"])) { echo $_SESSION["success"]; unset($_SESSION["success"]); } ?>
+                    </div>
+                    
+                    <div id="errorMessage" class="alert alert-danger text-center" role="alert" style="display: none;">
+                      <?php if (isset($_SESSION["error"])) { echo $_SESSION["error"]; unset($_SESSION["error"]); } ?>
+                    </div>
                 </div>
             </div>
 
